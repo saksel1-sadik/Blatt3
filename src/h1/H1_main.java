@@ -8,14 +8,14 @@ public class H1_main {
 		/*
 		 * auf eine sehr einfache Art ein Rating für Bankkunden berechnen. 
 		 * das aktuelle Guthaben (guthaben), 
-		 * der monatliche, zu erwartende Geldeingang (monEingang), 
+		 * der monatliche, zu erwartende Geldeingang (monEingang) >= 0, 
 		 * die aktuelle Bewertung (rating) 
 		 * und ein daraus resultierender Warnhinweis (warnhinweis).
 		 */
 		
 		double guthaben = -100.0, monEingang = 200.0;
 		int rating = -2;
-		boolean warnhinweis = true, negativ = true;
+		boolean warnhinweis, negativ ;
 		
 		/* Ist der Wert von guthaben echt kleiner als 0, 
 		 * so muss der Wert von negativ auf true gesetzt werden, sonst auf false.*/
@@ -69,18 +69,23 @@ public class H1_main {
 				if (rating < 0) {
 					warnhinweis = true;
 				} 
+				else {
+					warnhinweis = false;	
+				}
 			}
 			else {
-				warnhinweis = false;
+			warnhinweis = false;
 			}
-		}		
+		}
+		else {
+			warnhinweis = false;
+		}
 				
 		System.out.println("Guthaben: " + guthaben);
 		System.out.println("monatlicher Eingang: " + monEingang);
-		System.out.println("Warnhinweis: " + warnhinweis);
-		System.out.println("Rating: " + rating);
 		System.out.println("Negativ: " + negativ);
-		
+		System.out.println("Rating: " + rating);
+		System.out.println("Warnhinweis: " + warnhinweis);
 	}
 
 }

@@ -22,17 +22,16 @@ public class H3_main {
 		 * so entspricht der Wert von fix weiterhin seinem Startwert.
 		 */
 		
-		if (fix < max) {
+		if (fix < max) {							//Sind noch Fixplätze frei
 			istVoll = false;
-			if (wartend > 0) {
+			if (wartend > 0) {						// und noch Personen auf der Warteliste
 				if ((max - fix) <= wartend) {
-					wartend -= (max - fix);
-					fix = max;
+					wartend -= (max - fix);			//so wird so vielen Personen ein Fixplatz zugewiesen 
+					fix = max;						//bis entweder keine Fixplätze mehr frei sind
 					istVoll = true;
-				} else if (wartend < (max-fix)) {
-					fix += wartend;
-					wartend = 0;
-
+				} else  {							//if (wartend < (max-fix))
+					fix += wartend;					 
+					wartend = 0;					//oder keine Personen mehr auf der Warteliste stehen.
 				}
 			}
 		} else istVoll = true;
